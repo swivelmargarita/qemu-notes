@@ -1,7 +1,7 @@
 # QEMU notes
 
 ## Table of Contents
-[[TOC]]
+[[_TOC_]]
 
 
 ## Getting started
