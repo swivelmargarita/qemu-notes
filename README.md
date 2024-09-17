@@ -4,7 +4,8 @@
 [[_TOC_]]
 
 ## Description
-Compilation of useful information, scripts and cli options examples I learned whilst exploring QEMU
+Compilation of useful information, scripts and cli options examples I learned whilst exploring QEMU. 
+Note that this applies to x86_64 systems, as it is tested on 64 bit system. 
 
 ## Scripts 
 ### Bridged tap network setup
