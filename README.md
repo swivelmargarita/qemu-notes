@@ -9,9 +9,35 @@ whilst exploring QEMU.
 Note that this applies to x86_64 systems, as it is tested on 64 bit system. 
 
 ## Examples
+### First time boot for Arch Linux Guest
 ```bash
-
+qemu-system-x86_64\
+ -display gtk\
+ -machine type=q35,accel=kvm\
+ -cpu host -smp 4 -m 4G\
+ -cdrom arch.iso\
+ -drive driver=qcow2,if=virtio,file=arch_test.qcow2\
+ -boot once=d\
+ -vga qxl\
+ -device VGA,vgamem_mb=64\
+ -netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no\
+ -device e1000,netdev=mynet0,mac=52:54:69:69:69:42\
+ -audio pipewire,model=sb16\
+ -name "Arch Linux Test Machine"
 ```
+Explanation:
+- `-display gtk\` - Set display to GTK
+- `-machine type=q35,accel=kvm\` - Set emulated machine type to q35, turn KVM acceleration on
+- `-cpu host -smp 4 -m 4G\` Set CPU to host machine's CPU, Core count to 4, Memory to 4GB
+- `-cdrom arch.iso\` - Add arch.iso file as a  CD-ROM
+- `-drive driver=qcow2,if=virtio,file=arch_test.qcow2\` - Add arch_test.qcow2 file as a drive
+- `-boot once=d\` - Only boot from CD-ROM once. After reboot revert back to hard drive
+- `-vga qxl\` - Use qxl 
+- `-device VGA,vgamem_mb=64\` - Set VGA memory to 64 MB
+- `-netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no\` - ~~Add tap device(I think)~~
+- `-device e1000,netdev=mynet0,mac=52:54:69:69:69:42\` - ~~Dunno~~
+- `-audio pipewire,model=sb16\` - Add Sound Blaster 16 device with pipewire as driver
+- `-name "Arch Linux Test Machine"` Name to be displayed by window title
 ## Scripts 
 ### Bridged tap network setup
 Use `create_bridged_tap.sh` to create bridge, bridge a tap interface and your 
