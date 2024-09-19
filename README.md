@@ -108,10 +108,28 @@ The `disk_image` is a raw hard disk image for hard disk 0.
       individual threads can also be enabled on Linux to aid debugging.
 
 ### Block device options
-
+- `hda hard_disk`  
+Set hard disk 1 to `hard_disk`  
+Example:
+    - Set a virtual hard drive and use the specified image file for it:   
+    `-hda IMAGE.img`
 ### Display options
+- `-display type`  
 Select type of display to use.  
-Use `-display help` to list the available display types.
+Use `-display help` to list the available display types.  
+    - `-display sdl`  
+    Display video output via SDL (usually in a separate graphics window)  
+    - `-display gtk`  
+      Display  video output in a GTK window. This interface provides drop-down
+      menus and other UI elements to configure and control the VM during
+      runtime
+    - `vnc=<display>`  
+      Start a VNC server on display <display>
+- `-spice option[,option[,...]]`  
+Enable the spice remote desktop protocol.
+
+
+### Network options
 
 ## References
 - qemu-system-x86_64 man page
