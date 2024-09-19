@@ -14,6 +14,8 @@ Use `create_bridged_tap.sh` to create bridge, bridge a tap interface and your
 ethernet interface to it. Then scripts attempts to get and IP address and 
 network configuration from DHCP. 
 ```bash
+git clone https://gitlab.com/turbo-zone/qemu-notes.git
+cd ./qemu-notes/
 chmod +x ./create_bridged_tap.sh
 ./create_bridged_tap.sh
 ```
