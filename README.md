@@ -8,7 +8,10 @@ Compilation of useful information, scripts and cli options examples I learned
 whilst exploring QEMU.  
 Note that this applies to x86_64 systems, as it is tested on 64 bit system. 
 
+## Examples
+```bash
 
+```
 ## Scripts 
 ### Bridged tap network setup
 Use `create_bridged_tap.sh` to create bridge, bridge a tap interface and your 
