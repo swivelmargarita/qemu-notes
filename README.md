@@ -10,6 +10,7 @@ Note that this applies to x86_64 systems, as it is tested on 64 bit system.
 
 ## Examples
 ### First time boot for Arch Linux Guest
+You should remove the `-boot once` and `-cdrom` options after installing the Arch Linux into your drive. 
 ```bash
 qemu-system-x86_64\
  -display gtk\
