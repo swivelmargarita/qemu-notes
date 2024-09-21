@@ -28,7 +28,6 @@ read_interface_names() {
     [[ "${ETHERNET_INTERFACE}" ]] || { echo -n Using "${existing_eth_interfaces}"
                                           echo  " as interface..."; }
     ETHERNET_INTERFACE="${ETHERNET_INTERFACE:=${existing_eth_interfaces}}"
-    echo ~~~~~~~~~~~~~~~~~~~~~"$ETHERNET_INTERFACE"~~~~~~~~~~~~~~~~~~~~
 
     if ! [[ -d "/sys/class/net/${ETHERNET_INTERFACE}"  ]]; then
         echo Wrong interface name, exiting...
